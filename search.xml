@@ -64,4 +64,31 @@
         <tag>触手自动挂机</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Selenium永久开启Flash权限方法</title>
+    <url>/2020/01/09/selenium_flash/</url>
+    <content><![CDATA[<p><strong>前段时间接到一个自动化订单,需要打开直播间观看视频 看到一定时间会增长多少经验(大概就是这意思),抓包发现请求的数据以swf格式加密传输,由于对这方面没什么经验只能使用selenium操作了…，而后途中就发现了Flash权限问题，再此做个记录。</strong></p>
+<a id="more"></a>
+<blockquote>
+<p>Flash权限需要手动开起，对自动化测试的基佬们非常不友好，之后发现可以用修改本地注册表,来实现永久性开启指定域名后缀的Flash权限。</p>
+</blockquote>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>创建文本，后缀改为reg，填写下面内容</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\Policies\Google\Chrome\PluginsAllowedForUrls]</span><br><span class="line"><span class="string">"1"</span>=<span class="string">"[*.]com"</span></span><br><span class="line"><span class="string">"2"</span>=<span class="string">"[*.]cn"</span></span><br><span class="line"><span class="string">"3"</span>=<span class="string">"[*.]org"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>保存后双击的打开 [有风险提示]- &gt; 确定，之后重启浏览器即可完成 。</li>
+<li>在Chrome浏览器打开chrome://settings/content/flash 可以看到权限已经添加，我使用的域名后缀为 .tv<br><img src="https://img-blog.csdnimg.cn/20200110212700985.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2></li>
+<li>如果页面Flash播放器提示手动点击才可播放的话，用webdriver的execute_script()方法执行js操作开始播放,或者直接选择元素点击即可。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>自动化测试</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Selenium</tag>
+      </tags>
+  </entry>
 </search>
