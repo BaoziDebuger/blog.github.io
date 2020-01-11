@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python post方法提交json数据</title>
+    <url>/2020/01/11/Python-json-data/</url>
+    <content><![CDATA[<blockquote>
+<p>刚接触爬虫的程序员可能会遇到不会提交json数据的问题，本文以Python示例来说明如何提交。</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li>案例网址<br>:  <span class="exturl" data-url="aHR0cHM6Ly93d3cucmV0YWlsbWVub3QuY29tL2NvdXBvbnMvZm9vZA==" title="https://www.retailmenot.com/coupons/food">https://www.retailmenot.com/coupons/food<i class="fa fa-external-link"></i></span></li>
+</ul>
+<h2 id="抓包查看异步请求的地址"><a href="#抓包查看异步请求的地址" class="headerlink" title="抓包查看异步请求的地址"></a>抓包查看异步请求的地址</h2><dl><dt>: Request URL: <span class="exturl" data-url="aHR0cHM6Ly93d3cucmV0YWlsbWVub3QuY29tL3JtbnFsLw==" title="https://www.retailmenot.com/rmnql/">https://www.retailmenot.com/rmnql/<i class="fa fa-external-link"></i></span></dt><dd>Request Payoad (json格式数据),看下图<br><img src="https://img-blog.csdnimg.cn/20200111193406440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="json数据"></dd></dl><ul>
+<li>返回的Response<br><img src="https://img-blog.csdnimg.cn/20200111200820330.png" alt="在这里插入图片描述"></li>
+<li>复制原数据到Pycharm<br><img src="https://img-blog.csdnimg.cn/20200111193701905.png" alt="copy_data"><h2 id="格式化代码"><a href="#格式化代码" class="headerlink" title="格式化代码"></a>格式化代码</h2></li>
+<li>Pycharm中默认格式化代码快捷键为Ctrl+Alt+L,但是与QQ快捷键冲突,可关闭QQ或者自行更改快捷键<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;<span class="string">"operationName"</span>:<span class="string">"loginData"</span>,<span class="string">"variables"</span>:&#123;&#125;,<span class="string">"query"</span>:<span class="string">"query loginData &#123;\n  isLoggedIn\n  authenticatedUser &#123;\n    username\n    email\n    photo\n    __typename\n  &#125;\n&#125;\n"</span>&#125;,&#123;<span class="string">"operationName"</span>:<span class="string">"getUserInfo"</span>,<span class="string">"variables"</span>:&#123;&#125;,<span class="string">"query"</span>:<span class="string">"query getUserInfo &#123;\n  authenticatedUser &#123;\n    username\n    email\n    photo\n    __typename\n  &#125;\n&#125;\n"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200111194519455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="格式化代码"></p>
+<h2 id="json方式提交数据"><a href="#json方式提交数据" class="headerlink" title="json方式提交数据"></a>json方式提交数据</h2><table>
+<thead>
+<tr>
+<th>两种方式提交数据</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data=json.dumps(data)</code></td>
+<td>使用json模块中的dumps方法转成json数据在提交</td>
+</tr>
+<tr>
+<td><code>json=data</code></td>
+<td>直接以requests的json参数提交数据</td>
+</tr>
+</tbody></table>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on 2020年1月11日</span></span><br><span class="line"><span class="string">@author: 包子</span></span><br><span class="line"><span class="string">@site: http://www.wxiptest.com</span></span><br><span class="line"><span class="string">@email: 2775617031@qq.com</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> json, requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># pycharm格式化代码快捷键 Ctrl+Alt+L (此快捷键与QQ快捷键冲突 自行设置)</span></span><br><span class="line"><span class="comment"># 要提交的json格式数据</span></span><br><span class="line"></span><br><span class="line">data = &#123;</span><br><span class="line">           <span class="string">"operationName"</span>: <span class="string">"loginData"</span>,</span><br><span class="line">           <span class="string">"variables"</span>: &#123;&#125;,</span><br><span class="line">           <span class="string">"query"</span>: <span class="string">"query loginData &#123;\n  isLoggedIn\n  authenticatedUser &#123;\n    username\n    email\n    photo\n    __typename\n  &#125;\n&#125;\n"</span>&#125;, &#123;</span><br><span class="line">           <span class="string">"operationName"</span>: <span class="string">"getUserInfo"</span>, <span class="string">"variables"</span>: &#123;&#125;,</span><br><span class="line">           <span class="string">"query"</span>: <span class="string">"query getUserInfo &#123;\n  authenticatedUser &#123;\n    username\n    email\n    photo\n    __typename\n  &#125;\n&#125;\n"</span></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="comment"># 需携带origin 否者无法请求成功: 服务器会校验当前的请求是不是来自被允许的站点 就是通过Origin字段的值来进行的判断</span></span><br><span class="line">    <span class="string">'origin'</span>: <span class="string">'https://www.retailmenot.com'</span>,</span><br><span class="line">    <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4000.3 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可使用json=data 或 data=json.dumps(data)</span></span><br><span class="line">res = requests.post(<span class="string">'https://www.retailmenot.com/rmnql/'</span>, data=json.dumps(data), headers=headers).text</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Pycharm返回结果<br><img src="https://img-blog.csdnimg.cn/20200111200929501.png" alt="结果"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>json格式提交数据</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Selenium永久开启Flash权限方法</title>
     <url>/2020/01/10/selenium_flash/</url>
     <content><![CDATA[<p><strong>前段时间接到一个自动化订单,需要打开直播间观看视频 看到一定时间会增长多少经验(大概就是这意思),抓包发现请求的数据以swf格式加密传输,由于对这方面没什么经验只能使用selenium操作了…，而后途中就发现了Flash权限问题，再此做个记录。</strong></p>
