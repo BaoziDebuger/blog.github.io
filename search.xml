@@ -27,9 +27,10 @@
 </li>
 </ul>
 <pre><code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>).headers</span><br></pre></td></tr></table></figure>
-返回结果为下图:
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200113021613268.png)</code></pre><p>  这次返回的内容里，<strong>中文部分出现 \x9a\x84 此类字符</strong>,这是Unicode单字节编码(字符串的bytes形式),那么就可以先编码为unicode,在解码为utf-8</p>
+
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200113021613268.png)</code></pre><p>  这次返回的内容里，<strong>中文部分出现 \x9a\x84 此类字符</strong>,这是Unicode单字节编码(字符串的bytes形式),那么就可以先编码为unicode,在解码为utf-8,,看下面代码</p>
 <pre><code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">''</span>.encode(<span class="string">'raw_unicode_escape'</span>).decode(<span class="string">'UTF-8'</span>)</span><br></pre></td></tr></table></figure></code></pre><h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><ul>
 <li>可直接运行</li>
 </ul>
