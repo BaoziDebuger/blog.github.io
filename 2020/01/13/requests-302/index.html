@@ -322,13 +322,15 @@
 <li><p>返回头headers中有中文,查看content-type值为charset=utf-8,那就知道这是utf-8编码, 我再Pycharm设置的默认编码格式就是utf-8,按理来说会正常解析，但是返回的却是乱码.. </p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>).headers[<span class="string">'Location'</span>]</span><br></pre></td></tr></table></figure>
 
-<p>  返回结果为下图:<img src="https://img-blog.csdnimg.cn/20200113015801867.png" alt="在这里插入图片描述">  </p>
+<p>  返回结果为下图:</p>
+<p>  <img src="https://img-blog.csdnimg.cn/20200113015801867.png" alt="在这里插入图片描述">  </p>
 </li>
 <li><p>由于我之前是直接以<strong>headers[‘Location’]</strong>获取的值,那现在就直接获取<strong>headers</strong> 不加后面的中括号内容了,在请求一次</p>
 </li>
 </ul>
 <pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>).headers</span><br></pre></td></tr></table></figure>
 返回结果为下图:
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200113021613268.png)</code></pre><p>  这次返回的内容里，<strong>中文部分出现 \x9a\x84 此类字符</strong>,这是Unicode单字节编码(字符串的bytes形式),那么就可以先编码为unicode,在解码为utf-8</p>
 <pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>.encode(<span class="string">'raw_unicode_escape'</span>).decode(<span class="string">'UTF-8'</span>)</span><br></pre></td></tr></table></figure></code></pre><h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><ul>
 <li>可直接运行</li>
