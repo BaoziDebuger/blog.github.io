@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>爬虫解决重定向与中文乱码</title>
+    <url>/2020/01/13/requests-302/</url>
+    <content><![CDATA[<blockquote>
+<p>今天发现有位网友遇到请求重定向的问题,帮忙解决之后又碰到中文乱码！再此做个记录以便日后查阅.</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>访问网址后获取302跳转的链接  <figure class="highlight"><table><tr><td class="code"><pre><span class="line">url =  https://kgbook.com/e/DownSys/GetDown/?classid=21&amp;id=4702&amp;pathid=0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>需要提取Response Headers中location值(跳转地址)<br><img src="https://img-blog.csdnimg.cn/20200113013829770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="跳转地址"></li>
+</ul>
+</li>
+<li>如果用requests请求重定向的地址,在Pycharm中会出现请求不中断且不返回任何结果,此时需要在requests添加  <strong>allow_redirects=False</strong> 参数即可拒绝重定向,返回请求后的结果.</li>
+</ul>
+<pre><code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></code></pre><h2 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h2><ul>
+<li><p>返回头headers中有中文,查看content-type值为charset=utf-8,那就知道这是utf-8编码, 我再Pycharm设置的默认编码格式就是utf-8,按理来说会正常解析，但是返回的却是乱码.. </p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>).headers[<span class="string">'Location'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>  返回结果为下图:<img src="https://img-blog.csdnimg.cn/20200113015801867.png" alt="在这里插入图片描述">  </p>
+</li>
+<li><p>由于我之前是直接以<strong>headers[‘Location’]</strong>获取的值,那现在就直接获取<strong>headers</strong> 不加后面的中括号内容了,在请求一次</p>
+</li>
+</ul>
+<pre><code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>).headers</span><br></pre></td></tr></table></figure>
+返回结果为下图:
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200113021613268.png)</code></pre><p>  这次返回的内容里，<strong>中文部分出现 \x9a\x84 此类字符</strong>,这是Unicode单字节编码(字符串的bytes形式),那么就可以先编码为unicode,在解码为utf-8</p>
+<pre><code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">''</span>.encode(<span class="string">'raw_unicode_escape'</span>).decode(<span class="string">'UTF-8'</span>)</span><br></pre></td></tr></table></figure></code></pre><h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><ul>
+<li>可直接运行</li>
+</ul>
+<pre><code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">url = <span class="string">'https://kgbook.com/e/DownSys/GetDown/?classid=21&amp;id=4702&amp;pathid=0'</span></span><br><span class="line">res = requests.get(url,allow_redirects=<span class="literal">False</span>).headers[<span class="string">'Location'</span>]</span><br><span class="line">res_decode = str(res).encode(<span class="string">'raw_unicode_escape'</span>).decode(<span class="string">'UTF-8'</span>) <span class="comment"># 解决Unicode编码</span></span><br><span class="line">print(<span class="string">f'https://kgbook.com<span class="subst">&#123;res_decode&#125;</span>'</span>)</span><br></pre></td></tr></table></figure></code></pre><ul>
+<li>返回结果<br>  <img src="https://img-blog.csdnimg.cn/20200113024516414.png" alt="jieguo"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Requests</tag>
+        <tag>重定向_301_302解决</tag>
+        <tag>中文乱码(类似)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python post方法提交json数据</title>
     <url>/2020/01/11/Python-json-data/</url>
     <content><![CDATA[<blockquote>

@@ -48,17 +48,26 @@
   };
 </script>
 
-  <meta name="description" content="我真的不想动脑,可是脑子不同意..">
-<meta property="og:type" content="website">
-<meta property="og:title" content="包子的博客">
-<meta property="og:url" content="http://www.wxiptest.com/tags/ip%E6%8E%A2%E6%B5%8B/index.html">
+  <meta name="description" content="今天发现有位网友遇到请求重定向的问题,帮忙解决之后又碰到中文乱码！再此做个记录以便日后查阅.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫解决重定向与中文乱码">
+<meta property="og:url" content="http://www.wxiptest.com/2020/01/13/requests-302/index.html">
 <meta property="og:site_name" content="包子的博客">
-<meta property="og:description" content="我真的不想动脑,可是脑子不同意..">
+<meta property="og:description" content="今天发现有位网友遇到请求重定向的问题,帮忙解决之后又碰到中文乱码！再此做个记录以便日后查阅.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200113013829770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200113015801867.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200113024516414.png">
+<meta property="article:published_time" content="2020-01-12T18:50:44.000Z">
+<meta property="article:modified_time" content="2020-01-12T18:50:44.000Z">
 <meta property="article:author" content="包子">
+<meta property="article:tag" content="Requests">
+<meta property="article:tag" content="重定向_301_302解决">
+<meta property="article:tag" content="中文乱码(类似)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200113013829770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70">
 
-<link rel="canonical" href="http://www.wxiptest.com/tags/ip%E6%8E%A2%E6%B5%8B/">
+<link rel="canonical" href="http://www.wxiptest.com/2020/01/13/requests-302/">
 
 
 <script id="page-configurations">
@@ -66,11 +75,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>标签: ip探测 | 包子的博客</title>
+  <title>爬虫解决重定向与中文乱码 | 包子的博客</title>
   
 
 
@@ -208,54 +217,181 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">ip探测
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.wxiptest.com/2020/01/13/requests-302/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://wx.qlogo.cn/mmhead/ver_1/ibccMTSNHQgPvn5YDurxuicrFEtGVrajry9G4mib8r4qMvkKZ6mxRz4dJUhj7etRbScPMRlVIHJAt6hT3JlPic4l6J5XicXGsD0xOxIbybdLUFKM/0">
+      <meta itemprop="name" content="包子">
+      <meta itemprop="description" content="我真的不想动脑,可是脑子不同意..">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="包子的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          爬虫解决重定向与中文乱码
         </h2>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-13 02:50:44" itemprop="dateCreated datePublished" datetime="2020-01-13T02:50:44+08:00">2020-01-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/01/13/requests-302/" class="post-meta-item leancloud_visitors" data-flag-title="爬虫解决重定向与中文乱码" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/13/requests-302/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/13/requests-302/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h2 class="collection-header">2020</h2>
+        <blockquote>
+<p>今天发现有位网友遇到请求重定向的问题,帮忙解决之后又碰到中文乱码！再此做个记录以便日后查阅.</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>访问网址后获取302跳转的链接  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url =  https://kgbook.com/e/DownSys/GetDown/?classid=21&amp;id=4702&amp;pathid=0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>需要提取Response Headers中location值(跳转地址)<br><img src="https://img-blog.csdnimg.cn/20200113013829770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="跳转地址"></li>
+</ul>
+</li>
+<li>如果用requests请求重定向的地址,在Pycharm中会出现请求不中断且不返回任何结果,此时需要在requests添加  <strong>allow_redirects=False</strong> 参数即可拒绝重定向,返回请求后的结果.</li>
+</ul>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></code></pre><h2 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h2><ul>
+<li><p>返回头headers中有中文,查看content-type值为charset=utf-8,那就知道这是utf-8编码, 我再Pycharm设置的默认编码格式就是utf-8,按理来说会正常解析，但是返回的却是乱码.. </p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>).headers[<span class="string">'Location'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>  返回结果为下图:<img src="https://img-blog.csdnimg.cn/20200113015801867.png" alt="在这里插入图片描述">  </p>
+</li>
+<li><p>由于我之前是直接以<strong>headers[‘Location’]</strong>获取的值,那现在就直接获取<strong>headers</strong> 不加后面的中括号内容了,在请求一次</p>
+</li>
+</ul>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get(url,allow_redirects=<span class="literal">False</span>).headers</span><br></pre></td></tr></table></figure>
+返回结果为下图:
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200113021613268.png)</code></pre><p>  这次返回的内容里，<strong>中文部分出现 \x9a\x84 此类字符</strong>,这是Unicode单字节编码(字符串的bytes形式),那么就可以先编码为unicode,在解码为utf-8</p>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>.encode(<span class="string">'raw_unicode_escape'</span>).decode(<span class="string">'UTF-8'</span>)</span><br></pre></td></tr></table></figure></code></pre><h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><ul>
+<li>可直接运行</li>
+</ul>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">'https://kgbook.com/e/DownSys/GetDown/?classid=21&amp;id=4702&amp;pathid=0'</span></span><br><span class="line">res = requests.get(url,allow_redirects=<span class="literal">False</span>).headers[<span class="string">'Location'</span>]</span><br><span class="line">res_decode = str(res).encode(<span class="string">'raw_unicode_escape'</span>).decode(<span class="string">'UTF-8'</span>) <span class="comment"># 解决Unicode编码</span></span><br><span class="line">print(<span class="string">f'https://kgbook.com<span class="subst">&#123;res_decode&#125;</span>'</span>)</span><br></pre></td></tr></table></figure></code></pre><ul>
+<li>返回结果<br>  <img src="https://img-blog.csdnimg.cn/20200113024516414.png" alt="jieguo"></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-09T19:24:36+08:00"
-              content="2020-01-09">
-          01-09
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>包子
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.wxiptest.com/2020/01/13/requests-302/" title="爬虫解决重定向与中文乱码">http://www.wxiptest.com/2020/01/13/requests-302/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-      <h3 class="post-title">
-          <a class="post-title-link" href="/2020/01/09/wxip/" itemprop="url">
-            <span itemprop="name">强制获取ip(对方不用点击链接)</span>
-          </a>
-      </h3>
 
-    </header>
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Requests/" rel="tag"><i class="fa fa-tag"></i> Requests</a>
+              <a href="/tags/%E9%87%8D%E5%AE%9A%E5%90%91-301-302%E8%A7%A3%E5%86%B3/" rel="tag"><i class="fa fa-tag"></i> 重定向_301_302解决</a>
+              <a href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81-%E7%B1%BB%E4%BC%BC%C2%9A%C2%84/" rel="tag"><i class="fa fa-tag"></i> 中文乱码(类似)</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/11/Python-json-data/" rel="prev" title="Python post方法提交json数据">
+      <i class="fa fa-chevron-left"></i> Python post方法提交json数据
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -302,6 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文乱码"><span class="nav-number">2.</span> <span class="nav-text">中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整代码"><span class="nav-number">3.</span> <span class="nav-text">完整代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
