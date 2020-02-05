@@ -4,8 +4,9 @@
     <title>JS 快速定位</title>
     <url>/2020/02/05/Js-reverse/</url>
     <content><![CDATA[<blockquote>
-<p>常用的定位方法与hook脚本<br>&lt;–more–&gt;</p>
+<p>常用的定位方法与hook脚本</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="快速定位之搜索"><a href="#快速定位之搜索" class="headerlink" title="快速定位之搜索"></a>快速定位之搜索</h2><ul>
 <li>中间人的全局搜索(fiddle有个放大镜 搜索 可以搜索 到目标字符串 )</li>
 <li>开发者工具的全局搜索(dom搜索和全局搜索，可以搜索html和js)</li>
