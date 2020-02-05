@@ -180,36 +180,6 @@
       </tags>
   </entry>
   <entry>
-    <title>强制获取ip(对方不用点击链接)</title>
-    <url>/2020/01/09/wxip/</url>
-    <content><![CDATA[<h2 id="2018年中旬就已经发布在CSDN上-之后修改重新发布-提示有敏感词-如今就记录在此博客中。"><a href="#2018年中旬就已经发布在CSDN上-之后修改重新发布-提示有敏感词-如今就记录在此博客中。" class="headerlink" title="2018年中旬就已经发布在CSDN上 之后修改重新发布 提示有敏感词.. 如今就记录在此博客中。"></a>2018年中旬就已经发布在CSDN上 之后修改重新发布 提示有敏感词.. 如今就记录在此博客中。</h2><h3 id="强制获取ip不仅限于QQ-群-微信-群-支付宝-论坛-博客等"><a href="#强制获取ip不仅限于QQ-群-微信-群-支付宝-论坛-博客等" class="headerlink" title="强制获取ip不仅限于QQ(群) 微信(群) 支付宝 论坛 博客等"></a>强制获取ip不仅限于QQ(群) 微信(群) 支付宝 论坛 博客等</h3><hr>
-<p>网站后台记录对方基本的浏览器信息和ip地址，不过此方法并不需要对方打开链接，即可记录ip。<br>其原理就是利用图片外链获取访客基本的IP与UA信息。</p>
-<a id="more"></a>
-<p>获取到的ip有部分几率可以获知对方真实所在的城市，ip很难做得到精准定位，除非此ip是固定的独立ip(一般都是企业)。</p>
-<p>介绍几个 IP高精度定位网址:</p>
-<p>埃文科技 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBwbHVzMzYwLmNvbS8=" title="https://www.ipplus360.com/">https://www.ipplus360.com/<i class="fa fa-external-link"></i></span><br>目前发现每天可以使用公安版高精度查询服务一次，比较不错的。</p>
-<p>遇见仓库 <span class="exturl" data-url="aHR0cHM6Ly9tZXQucmVkL2gvdG9vbHMvcXVlcnlJcA==" title="https://met.red/h/tools/queryIp">https://met.red/h/tools/queryIp<i class="fa fa-external-link"></i></span><br>现在用的最多的就是这个</p>
-<p>查IPIP <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBpcC5uZXQvaXAuaHRtbA==" title="https://www.ipip.net/ip.html">https://www.ipip.net/ip.html<i class="fa fa-external-link"></i></span></p>
-<p>GPS经纬度查询 <span class="exturl" data-url="aHR0cDovL3d3dy5ncHNzcGcuY29tL21hcHMuaHRt" title="http://www.gpsspg.com/maps.htm">http://www.gpsspg.com/maps.htm<i class="fa fa-external-link"></i></span></p>
-<p>源码在此处</p>
-<ol>
-<li><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OS9hcnRpY2xlL2RldGFpbHMvOTk2NzU3MzU=" title="https://blog.csdn.net/weixin_43293899/article/details/99675735">点击打开<i class="fa fa-external-link"></i></span></p>
-<p>  另类使用方法可以<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OS9hcnRpY2xlL2RldGFpbHMvODM4NjIzNzE=" title="https://blog.csdn.net/weixin_43293899/article/details/83862371">看看这里<i class="fa fa-external-link"></i></span><img src="https://img-blog.csdnimg.cn/20190519225413122.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="链接生成与查询界面"><br><img src="https://img-blog.csdnimg.cn/20190519225907333.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>获取方法   ↓↓↓ 如图:</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20190519230618487.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-</li>
-</ol>
-<p>2.经纬度<br>说明:对方打开链接会弹出是否授权位置，对方授权后即可获取到GP, 如果拒绝的话获取的是IP转换的经纬度（不准）,qq内置浏览器内打开会获取不到GPS，pc端也获取不到，微信内置可获取 其他浏览器自行测试，利用的是百度与谷歌地图的API,有兴趣的小伙伴可以自己利用。<br><img src="https://img-blog.csdnimg.cn/20190519231016563.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="经纬度界面"><br><img src="https://img-blog.csdnimg.cn/20190519232533876.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190519233140893.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.邮箱<br>说明:网站页面上有说明 ，qq邮箱和163都可以获取到 其他邮箱自行测试。<br><img src="https://img-blog.csdnimg.cn/20190519233603419.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190519233909680.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="QQ获取ip（空间-好友-群。-都可以）"><a href="#QQ获取ip（空间-好友-群。-都可以）" class="headerlink" title="QQ获取ip（空间,好友,群。 都可以）"></a>QQ获取ip（空间,好友,群。 都可以）</h2><p>1.方法：<br>    将生成的链接发送到手机QQ中的我的设备上， 在手机QQ中打开链接 ，而后点击右上角的转发,转发给目标即完成操作，等待几秒钟后返回网站查询结果。</p>
-<pre><code>技巧！ 不管qq还是微信,先跟对方正常聊天,然后不经意间就发送xml链接 ，然后在快速撤回此消息即可，qq与微信都可以修改xml 以便更隐蔽的获取对方来源，</code></pre><h2 id="在说一下关于获取对方ip的事情"><a href="#在说一下关于获取对方ip的事情" class="headerlink" title="在说一下关于获取对方ip的事情"></a>在说一下关于获取对方ip的事情</h2><p>之前也一直咨询网上的律师，有说违法的 也有说不属于违法的(一脸懵逼！！)，我个人觉得用ip来找一个人实在是很扯淡，除非是警察，或者对方的ip是固定ip还比较容易定位的到，现在大多数人都是4G网 大王卡之类的(腾讯大王卡的话 你就是在月球 定位到的ip还是深圳)，很多宽带服务商的服务器还都是异地搭建，你查到的也只能是异地ip，想用ip来定位 纯属看运气，当然了 获取ip的方法也各式各样，抓取流量数据包， 还有一些带某些插件的QQ，总之吧  这东西就是在法律边缘疯狂试探，用的好呢 甚至可以救人，在就是被一些别有用心的人利用来干坏事 ，具体能干啥坏事我也不知道…..<br>再次套用下某人的一句话:<br>    <img src="https://img-blog.csdnimg.cn/2019051923550894.jpg" alt="在这里插入图片描述"></p>
-<h2 id="源码下载地址-https-download-csdn-net-download-weixin-43293899-11569320"><a href="#源码下载地址-https-download-csdn-net-download-weixin-43293899-11569320" class="headerlink" title="源码下载地址 https://download.csdn.net/download/weixin_43293899/11569320"></a>源码下载地址 <span class="exturl" data-url="aHR0cHM6Ly9kb3dubG9hZC5jc2RuLm5ldC9kb3dubG9hZC93ZWl4aW5fNDMyOTM4OTkvMTE1NjkzMjA=" title="https://download.csdn.net/download/weixin_43293899/11569320">https://download.csdn.net/download/weixin_43293899/11569320<i class="fa fa-external-link"></i></span></h2>]]></content>
-      <categories>
-        <category>php</category>
-      </categories>
-      <tags>
-        <tag>ip探测</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PyQt5-触手TV定时挂房</title>
     <url>/2020/01/09/pyqt5_cstv/</url>
     <content><![CDATA[<p><strong>前言</strong></p>
@@ -241,6 +211,36 @@
       </categories>
       <tags>
         <tag>触手自动挂机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>强制获取ip(对方不用点击链接)</title>
+    <url>/2020/01/09/wxip/</url>
+    <content><![CDATA[<h2 id="2018年中旬就已经发布在CSDN上-之后修改重新发布-提示有敏感词-如今就记录在此博客中。"><a href="#2018年中旬就已经发布在CSDN上-之后修改重新发布-提示有敏感词-如今就记录在此博客中。" class="headerlink" title="2018年中旬就已经发布在CSDN上 之后修改重新发布 提示有敏感词.. 如今就记录在此博客中。"></a>2018年中旬就已经发布在CSDN上 之后修改重新发布 提示有敏感词.. 如今就记录在此博客中。</h2><h3 id="强制获取ip不仅限于QQ-群-微信-群-支付宝-论坛-博客等"><a href="#强制获取ip不仅限于QQ-群-微信-群-支付宝-论坛-博客等" class="headerlink" title="强制获取ip不仅限于QQ(群) 微信(群) 支付宝 论坛 博客等"></a>强制获取ip不仅限于QQ(群) 微信(群) 支付宝 论坛 博客等</h3><hr>
+<p>网站后台记录对方基本的浏览器信息和ip地址，不过此方法并不需要对方打开链接，即可记录ip。<br>其原理就是利用图片外链获取访客基本的IP与UA信息。</p>
+<a id="more"></a>
+<p>获取到的ip有部分几率可以获知对方真实所在的城市，ip很难做得到精准定位，除非此ip是固定的独立ip(一般都是企业)。</p>
+<p>介绍几个 IP高精度定位网址:</p>
+<p>埃文科技 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBwbHVzMzYwLmNvbS8=" title="https://www.ipplus360.com/">https://www.ipplus360.com/<i class="fa fa-external-link"></i></span><br>目前发现每天可以使用公安版高精度查询服务一次，比较不错的。</p>
+<p>遇见仓库 <span class="exturl" data-url="aHR0cHM6Ly9tZXQucmVkL2gvdG9vbHMvcXVlcnlJcA==" title="https://met.red/h/tools/queryIp">https://met.red/h/tools/queryIp<i class="fa fa-external-link"></i></span><br>现在用的最多的就是这个</p>
+<p>查IPIP <span class="exturl" data-url="aHR0cHM6Ly93d3cuaXBpcC5uZXQvaXAuaHRtbA==" title="https://www.ipip.net/ip.html">https://www.ipip.net/ip.html<i class="fa fa-external-link"></i></span></p>
+<p>GPS经纬度查询 <span class="exturl" data-url="aHR0cDovL3d3dy5ncHNzcGcuY29tL21hcHMuaHRt" title="http://www.gpsspg.com/maps.htm">http://www.gpsspg.com/maps.htm<i class="fa fa-external-link"></i></span></p>
+<p>源码在此处</p>
+<ol>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OS9hcnRpY2xlL2RldGFpbHMvOTk2NzU3MzU=" title="https://blog.csdn.net/weixin_43293899/article/details/99675735">点击打开<i class="fa fa-external-link"></i></span></p>
+<p>  另类使用方法可以<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OS9hcnRpY2xlL2RldGFpbHMvODM4NjIzNzE=" title="https://blog.csdn.net/weixin_43293899/article/details/83862371">看看这里<i class="fa fa-external-link"></i></span><img src="https://img-blog.csdnimg.cn/20190519225413122.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="链接生成与查询界面"><br><img src="https://img-blog.csdnimg.cn/20190519225907333.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>获取方法   ↓↓↓ 如图:</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20190519230618487.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+</ol>
+<p>2.经纬度<br>说明:对方打开链接会弹出是否授权位置，对方授权后即可获取到GP, 如果拒绝的话获取的是IP转换的经纬度（不准）,qq内置浏览器内打开会获取不到GPS，pc端也获取不到，微信内置可获取 其他浏览器自行测试，利用的是百度与谷歌地图的API,有兴趣的小伙伴可以自己利用。<br><img src="https://img-blog.csdnimg.cn/20190519231016563.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="经纬度界面"><br><img src="https://img-blog.csdnimg.cn/20190519232533876.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190519233140893.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.邮箱<br>说明:网站页面上有说明 ，qq邮箱和163都可以获取到 其他邮箱自行测试。<br><img src="https://img-blog.csdnimg.cn/20190519233603419.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190519233909680.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzI5Mzg5OQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="QQ获取ip（空间-好友-群。-都可以）"><a href="#QQ获取ip（空间-好友-群。-都可以）" class="headerlink" title="QQ获取ip（空间,好友,群。 都可以）"></a>QQ获取ip（空间,好友,群。 都可以）</h2><p>1.方法：<br>    将生成的链接发送到手机QQ中的我的设备上， 在手机QQ中打开链接 ，而后点击右上角的转发,转发给目标即完成操作，等待几秒钟后返回网站查询结果。</p>
+<pre><code>技巧！ 不管qq还是微信,先跟对方正常聊天,然后不经意间就发送xml链接 ，然后在快速撤回此消息即可，qq与微信都可以修改xml 以便更隐蔽的获取对方来源，</code></pre><h2 id="在说一下关于获取对方ip的事情"><a href="#在说一下关于获取对方ip的事情" class="headerlink" title="在说一下关于获取对方ip的事情"></a>在说一下关于获取对方ip的事情</h2><p>之前也一直咨询网上的律师，有说违法的 也有说不属于违法的(一脸懵逼！！)，我个人觉得用ip来找一个人实在是很扯淡，除非是警察，或者对方的ip是固定ip还比较容易定位的到，现在大多数人都是4G网 大王卡之类的(腾讯大王卡的话 你就是在月球 定位到的ip还是深圳)，很多宽带服务商的服务器还都是异地搭建，你查到的也只能是异地ip，想用ip来定位 纯属看运气，当然了 获取ip的方法也各式各样，抓取流量数据包， 还有一些带某些插件的QQ，总之吧  这东西就是在法律边缘疯狂试探，用的好呢 甚至可以救人，在就是被一些别有用心的人利用来干坏事 ，具体能干啥坏事我也不知道…..<br>再次套用下某人的一句话:<br>    <img src="https://img-blog.csdnimg.cn/2019051923550894.jpg" alt="在这里插入图片描述"></p>
+<h2 id="源码下载地址-https-download-csdn-net-download-weixin-43293899-11569320"><a href="#源码下载地址-https-download-csdn-net-download-weixin-43293899-11569320" class="headerlink" title="源码下载地址 https://download.csdn.net/download/weixin_43293899/11569320"></a>源码下载地址 <span class="exturl" data-url="aHR0cHM6Ly9kb3dubG9hZC5jc2RuLm5ldC9kb3dubG9hZC93ZWl4aW5fNDMyOTM4OTkvMTE1NjkzMjA=" title="https://download.csdn.net/download/weixin_43293899/11569320">https://download.csdn.net/download/weixin_43293899/11569320<i class="fa fa-external-link"></i></span></h2>]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>ip探测</tag>
       </tags>
   </entry>
 </search>
